@@ -5,7 +5,7 @@
       <tr class="<?php echo fmod($i, 2) ? 'even' : 'odd' ?>">
         <td><?php echo $job->getLocation() ?></td>
         <td>
-          <a href="<?php echo url_for('job_show_user', $job) ?>">
+          <a href="<?php echo url_for('job_show', $job) ?>">
             <?php echo $job->getPosition() ?>
           </a>
         </td>

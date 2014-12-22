@@ -1,0 +1,30 @@
+Dec 22 11:02:32 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Dec 22 11:02:32 symfony [info] {myUser} Automatic user logout due to timeout
+Dec 22 11:02:32 symfony [info] {myUser} User is not authenticated
+Dec 22 11:02:32 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 22 11:02:32 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 22 11:02:32 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Dec 22 11:02:32 symfony [info] {sfPHPView} Render "/var/www/jobeet/lib/vendor/symfony/lib/controller/default/templates/indexSuccess.php"
+Dec 22 11:02:32 symfony [info] {sfPHPView} Decorate content with "/var/www/jobeet/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Dec 22 11:02:32 symfony [info] {sfPHPView} Render "/var/www/jobeet/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Dec 22 11:02:32 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 22 11:02:32 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 22 11:02:32 symfony [info] {sfWebDebugLogger} Configuration 55.45 ms (9)
+Dec 22 11:02:32 symfony [info] {sfWebDebugLogger} Factories 22.86 ms (1)
+Dec 22 11:02:32 symfony [info] {sfWebDebugLogger} Action "default/index" 0.05 ms (1)
+Dec 22 11:02:32 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 24.21 ms (1)
+Dec 22 11:02:32 symfony [info] {sfWebResponse} Send content (29091 o)
+Dec 22 11:32:04 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Dec 22 11:32:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 22 11:32:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 22 11:32:04 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Dec 22 11:32:04 symfony [info] {sfPHPView} Render "/var/www/jobeet/lib/vendor/symfony/lib/controller/default/templates/indexSuccess.php"
+Dec 22 11:32:04 symfony [info] {sfPHPView} Decorate content with "/var/www/jobeet/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Dec 22 11:32:04 symfony [info] {sfPHPView} Render "/var/www/jobeet/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Dec 22 11:32:04 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 22 11:32:04 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 22 11:32:04 symfony [info] {sfWebDebugLogger} Configuration 0.61 ms (9)
+Dec 22 11:32:04 symfony [info] {sfWebDebugLogger} Factories 4.54 ms (1)
+Dec 22 11:32:04 symfony [info] {sfWebDebugLogger} Action "default/index" 0.06 ms (1)
+Dec 22 11:32:04 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 2.50 ms (1)
+Dec 22 11:32:04 symfony [info] {sfWebResponse} Send content (28413 o)
