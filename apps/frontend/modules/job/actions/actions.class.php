@@ -74,6 +74,8 @@ class jobActions extends sfActions
     {
       $jobeet_job = $form->save();
 
+      $this->getUser()->setFlash('notice', 'Action success.');
+
       $this->redirect('job/edit?id='.$jobeet_job->getId());
     }
   }
