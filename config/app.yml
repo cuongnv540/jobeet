@@ -1,0 +1,13 @@
+prod:
+
+stg:
+
+dev:
+
+default:
+  job:
+    type_job:
+      1: "Full time"
+      2: "Part Time"
+      3: "Session"
+      4: "Other"

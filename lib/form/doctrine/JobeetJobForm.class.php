@@ -29,9 +29,25 @@ class JobeetJobForm extends BaseJobeetJobForm
       'expires_at',
     ));
 
+    $this->setWidget('type', new sfWidgetFormChoice(array(
+      'choices' => sfConfig::get('app_job_type_job'),
+      'expanded' => false,
+      'multiple' => false,
+    )));
+
+    $this->setValidator('type', new sfValidatorChoice(array(
+      'choices' => array_keys(sfConfig::get('app_job_type_job')),
+      'required' => true,
+    )));
+
+    $this->setValidator('email', new PrValidatorEmail(array(
+      'min_length' => 10,
+    )));
+
     $this->widgetSchema->setLabels(array(
       'url' => 'Company url',
       'logo' => 'company logo',
     ));
+
   }
 }
