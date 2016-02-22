@@ -22,6 +22,70 @@ JobeetJob:
     expires_at:   { type: timestamp, notnull: true }
   relations:
     JobeetCategory: { onDelete: CASCADE, local: category_id, foreign: id, foreignAlias: JobeetJobs }
+    ExtendedJobInformation:
+      local: id
+      foreign: job_id
+      type: many
+
+ExtendedJobInformation:
+  tableName: extended_job_information
+  actAs: { Timestampable: ~, SoftDelete: ~ }
+  columns:
+    id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+      comment: "ID"
+    job_id:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      comment: "reference to jobbet_job.id"
+    title:
+      type: string(1000)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      comment: "title"
+    content:
+      type: string(1000)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      comment: "content"
+    created_by:
+      type: string(32)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      comment: "作成者"
+    updated_by:
+      type: string(32)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      comment: "更新者"
+  relations:
+    JobeetJob:
+      local: job_id
+      foreign: id
+      type: one
+  indexes:
+    deleted_at_idx:
+      fields: [deleted_at]
 
 JobeetAffiliate:
   actAs: { Timestampable: ~ }
