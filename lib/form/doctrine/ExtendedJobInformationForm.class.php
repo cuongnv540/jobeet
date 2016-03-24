@@ -12,5 +12,7 @@ class ExtendedJobInformationForm extends BaseExtendedJobInformationForm
 {
   public function configure()
   {
+  	$this->validatorSchema['title'] = new sfValidatorString(array('max_length' => 1000, 'required' => true));
+  	$this->validatorSchema['content'] = new sfValidatorString(array('max_length' => 1000, 'required' => true));
   }
 }

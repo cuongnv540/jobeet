@@ -48,6 +48,50 @@ class JobeetJobForm extends BaseJobeetJobForm
       'url' => 'Company url',
       'logo' => 'company logo',
     ));
+  }
 
+  public function embedForms($params=array())
+  {
+    $this->embedExtendedJobInformationForm($params);
+  }
+
+  private function embedExtendedJobInformationForm($params)
+  {
+    $extendedJobInformation = Doctrine_Query::create()
+      ->select('*')
+      ->from("ExtendedJobInformation e")
+      ->andWhere('e.job_id = ?', $this->getObject()->id)
+      ->fetchOne();
+
+    if (!$extendedJobInformation)
+    {
+      $extendedJobInformation = new ExtendedJobInformation();
+    }
+
+    $extendedJobInformationForm = new ExtendedJobInformationForm($extendedJobInformation);
+    $extendedJobInformationForm->useFields(
+      array(
+        'title',
+        'content',
+    ));
+
+    $extendedJobInformationForm->widgetSchema->setLabel('title', 'Title');
+    $extendedJobInformationForm->widgetSchema->setLabel('content', 'Content');
+
+    $this->embedForm('extended_job_infomation', $extendedJobInformationForm);
+    $this->widgetSchema->setLabel('extended_job_infomation', 'Extended Area');
+  }
+
+  protected function doSave($con = null)
+  {
+    $extendedJobInformationForm = $this->getEmbeddedForm('extended_job_infomation');
+    $extendedJobInformation = $extendedJobInformationForm->getObject();
+
+    $job = $this->getObject();
+
+    $extendedJobInformation->JobeetJob = $job;
+    $extendedJobInformation->created_by = 'hihi1';
+
+    parent::doSave($con);
   }
 }

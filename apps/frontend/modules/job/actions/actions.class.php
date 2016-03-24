@@ -44,6 +44,7 @@ class jobActions extends sfActions
   {
     $this->forward404Unless($jobeet_job = Doctrine_Core::getTable('JobeetJob')->find(array($request->getParameter('id'))), sprintf('Object jobeet_job does not exist (%s).', $request->getParameter('id')));
     $this->form = new JobeetJobForm($jobeet_job);
+    $this->form->embedForms();
   }
 
   public function executeUpdate(sfWebRequest $request)
@@ -51,6 +52,7 @@ class jobActions extends sfActions
     $this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
     $this->forward404Unless($jobeet_job = Doctrine_Core::getTable('JobeetJob')->find(array($request->getParameter('id'))), sprintf('Object jobeet_job does not exist (%s).', $request->getParameter('id')));
     $this->form = new JobeetJobForm($jobeet_job);
+    $this->form->embedForms();
 
     $this->processForm($request, $this->form);
 
@@ -77,6 +79,10 @@ class jobActions extends sfActions
       $this->getUser()->setFlash('notice', 'Action success.');
 
       $this->redirect('job/edit?id='.$jobeet_job->getId());
+    }
+    else
+    {
+      $this->getUser()->setFlash('error', 'Action Fails.');
     }
   }
 }

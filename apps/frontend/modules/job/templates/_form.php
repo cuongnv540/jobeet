@@ -22,7 +22,8 @@
       </tr>
     </tfoot>
     <tbody>
-      <?php echo $form ?>
+    <?php echo $form ?>
     </tbody>
+
   </table>
 </form>

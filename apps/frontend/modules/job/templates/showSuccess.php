@@ -30,6 +30,9 @@
   <div class="meta">
     <small>posted on <?php echo date('m/d/Y', strtotime($job->getCreatedAt())) ?></small>
   </div>
+
+
+  <h4>More information </h4>
  
   <div style="padding: 20px 0">
     <a href="<?php echo url_for('job/edit?id='.$job->getId()) ?>">Edit</a>
